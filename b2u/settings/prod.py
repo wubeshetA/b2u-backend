@@ -23,5 +23,5 @@ DATABASES = {
 }
 CORS_ALLOWED_ORIGINS = [
    'https://*',
-    'http://*'
+'http://*'
 ]
