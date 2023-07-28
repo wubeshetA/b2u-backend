@@ -2,6 +2,7 @@
 # pip install pipenv
 
 # pipenv install
+pip install --upgrade pip
 pip install -r requirements.txt
 
 # make migrations
