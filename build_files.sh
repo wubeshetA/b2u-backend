@@ -4,9 +4,7 @@
 # pipenv install
 pip install --upgrade pip
 pip install -r requirements.txt
-echo "=================================================="
-echo `python3 --version`
-echo "=================================================="
+
 # make migrations
-# python3.11 manage.py migrate 
-# python3.11 manage.py collectstatic
+python3.9 manage.py migrate 
+python3.9 manage.py collectstatic
