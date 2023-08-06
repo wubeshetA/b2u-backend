@@ -7,6 +7,10 @@ name = "pypi"
 django = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
+django-cors-headers = "*"
+pillow = "*"
+djangorestframework = "*"
+drf-nested-routers = "*"
 
 [dev-packages]
 
