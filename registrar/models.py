@@ -14,7 +14,7 @@ class Student(models.Model):
     ]
     
     first_name = models.CharField(max_length=50)
-    middle_name = models.CharField(max_length=50)
+    middle_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50)
     date_of_birth = models.DateField()
     
@@ -28,7 +28,7 @@ class Student(models.Model):
     school_address = models.CharField(max_length=50)
     grade = models.IntegerField()
     cgpa = models.DecimalField(max_digits=4, decimal_places=2)
-    transcript = models.FileField(upload_to='transcripts')
+    # transcript = models.FileField(upload_to='transcripts')
     
     # tertiary education goals
     intended_major1 = models.CharField(max_length=50)
@@ -36,6 +36,8 @@ class Student(models.Model):
     intended_major3 = models.CharField(max_length=50)
     
     # essay prompt response
+    # essay1 = models.TextField()
+    # essay2 = models.TextField()
     
     # @admin.display(ordering='user__first_name')
     # def first_name(self):
@@ -50,6 +52,32 @@ class Student(models.Model):
 
     # class Meta:
     #     ordering = ['user__first_name', 'user__last_name']
+    
+class Mentor(models.Model):
+    MALE = 'M'
+    FEMALE = 'F'
+    
+    GENDER_CHOICES = [
+        (MALE, 'male'),
+        (FEMALE, 'female'),
+    ]
+    
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.CharField(max_length=50),
+    phone = models.CharField(max_length=50),
+    address = models.CharField(max_length=50)
+    gender = models.CharField(max_length=50, choices=GENDER_CHOICES)
+    nationality = models.CharField(max_length=50)
+    location = models.CharField(max_length=50)
+    university = models.CharField(max_length=50)
+    major = models.CharField(max_length=50)
+    
+    # essay questions
+    essay1 = models.TextField()
+    essay2 = models.TextField()
+    essay3 = models.TextField()
+    
     
 class Attachment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='attachments')
