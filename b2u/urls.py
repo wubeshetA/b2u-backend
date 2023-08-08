@@ -21,7 +21,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 
-
+admin.site.site_header = 'Bridge2University Admin'
+admin.site.index_title = 'Bridge2University Admin Portal'
 
 def status(request):
     return JsonResponse({'status': 'ok'})
