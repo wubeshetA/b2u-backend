@@ -64,12 +64,12 @@ class Mentor(models.Model):
     
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    email = models.CharField(max_length=50),
-    phone = models.CharField(max_length=50),
+    email = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     gender = models.CharField(max_length=50, choices=GENDER_CHOICES)
     nationality = models.CharField(max_length=50)
-    location = models.CharField(max_length=50)
+    address = models.CharField(max_length=50)
     university = models.CharField(max_length=50)
     major = models.CharField(max_length=50)
     
@@ -81,7 +81,7 @@ class Mentor(models.Model):
     
 class Attachment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='attachments')
-    
+    # mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE, related_name='attachments')
     attachment = models.FileField(upload_to='attachments/')
     
     def __str__(self):
